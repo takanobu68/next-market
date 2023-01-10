@@ -1,4 +1,4 @@
-import { NextApiResponse } from 'next';
+import type { NextApiResponse } from 'next';
 import jwt from 'jsonwebtoken';
 import connectDB from '../../../utils/database';
 import { UserModel } from '../../../utils/schemaModels';

@@ -1,4 +1,4 @@
-import { NextApiRequest } from 'next';
+import type { NextApiRequest } from 'next';
 import { Types } from 'mongoose';
 
 export interface ItemDataType {
@@ -34,7 +34,7 @@ export interface ResMessageType {
   token?: string;
 }
 
-// register.ts , login.ts
+// register.ts,login.ts
 export interface ExtendedNextApiRequestUser extends NextApiRequest {
   body: UserDataType;
 }
@@ -42,4 +42,25 @@ export interface ExtendedNextApiRequestUser extends NextApiRequest {
 // login.ts
 export interface SavedUserDataType extends UserDataType {
   _id: Types.ObjectId;
+}
+// readAll.ts,[id].ts,update/[id].ts,delete/[id].ts
+export interface SavedItemDataType extends ItemDataType {
+  _id: Types.ObjectId;
+}
+
+// readAll.ts
+export interface ResReadAllTypes {
+  message: string;
+  allItems?: SavedItemDataType[];
+}
+
+// create.ts
+export interface ExtendedNextApiRequestItem extends NextApiRequest {
+  body: ItemDataType;
+}
+
+// [id].ts
+export interface ResReadSingleType {
+  message: string;
+  singleItem?: SavedItemDataType;
 }

@@ -1,3 +1,4 @@
+import type { NextApiResponse } from 'next';
 import connectDB from '../../../../utils/database';
 import { ItemModel } from '../../../../utils/schemaModels';
 import auth from '../../../../utils/auth';
