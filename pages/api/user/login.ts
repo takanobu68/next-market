@@ -1,13 +1,24 @@
+import { NextApiResponse } from 'next';
 import jwt from 'jsonwebtoken';
 import connectDB from '../../../utils/database';
 import { UserModel } from '../../../utils/schemaModels';
+import {
+  ExtendedNextApiRequestUser,
+  ResMessageType,
+  SavedUserDataType,
+} from '../../../utils/types';
 
 const secret_key = 'nextmarket';
 
-const loginUser = async (req, res) => {
+const loginUser = async (
+  req: ExtendedNextApiRequestUser,
+  res: NextApiResponse<ResMessageType>
+) => {
   try {
     await connectDB();
-    const savedUserData = await UserModel.findOne({ email: req.body.email });
+    const savedUserData: SavedUserDataType | null = await UserModel.findOne({
+      email: req.body.email,
+    });
     if (savedUserData) {
       // ユーザが存在する場合
 
