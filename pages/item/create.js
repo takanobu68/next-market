@@ -11,20 +11,23 @@ const CreateItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/item/create', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${localStorage.getItem('token')}`,
-        },
-        body: JSON.stringify({
-          title,
-          price,
-          image,
-          description,
-        }),
-      });
+      const response = await fetch(
+        'next-market-mocha-omega.vercel.app/api/item/create',
+        {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+          body: JSON.stringify({
+            title,
+            price,
+            image,
+            description,
+          }),
+        }
+      );
       const jsonData = await response.json();
       alert(jsonData.message);
     } catch (error) {

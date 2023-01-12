@@ -25,7 +25,7 @@ export default ReadSingleItem;
 
 export const getServerSideProps = async (context) => {
   const response = await fetch(
-    `http://localhost:3000/api/item/${context.query.id}`
+    `next-market-mocha-omega.vercel.app/api/item/${context.query.id}`
   );
   const singleItem = await response.json();
 

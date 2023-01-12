@@ -25,7 +25,9 @@ const ReadAllItems = (props) => {
 export default ReadAllItems;
 
 export const getServerSideProps = async () => {
-  const response = await fetch('http://localhost:3000/api/item/readall');
+  const response = await fetch(
+    'next-market-mocha-omega.vercel.app/api/item/readall'
+  );
 
   const allItems = response.json();
 
