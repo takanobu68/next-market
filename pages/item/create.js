@@ -12,7 +12,7 @@ const CreateItem = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        'next-market-mocha-omega.vercel.app/api/item/create',
+        'https://next-market-mocha-omega.vercel.app//api/item/create',
         {
           method: 'POST',
           headers: {

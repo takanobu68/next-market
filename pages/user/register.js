@@ -13,7 +13,7 @@ const Register = () => {
 
     try {
       const response = await fetch(
-        'next-market-mocha-omega.vercel.app/api/user/register',
+        'https://next-market-mocha-omega.vercel.app//api/user/register',
         {
           method: 'POST',
           headers: {

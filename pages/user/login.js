@@ -10,7 +10,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        'next-market-mocha-omega.vercel.app/api/user/login',
+        'https://next-market-mocha-omega.vercel.app//api/user/login',
         {
           method: 'POST',
           headers: {
